@@ -1,3 +1,5 @@
+library(googleVis)
+library(corrplot)
 shinyServer(function(input, output){
   dataInput1 <- reactive({
     cor(empl %>%
