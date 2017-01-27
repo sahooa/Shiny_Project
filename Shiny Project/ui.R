@@ -1,12 +1,12 @@
 library(shinydashboard)
 
 ui <- dashboardPage(
-  dashboardHeader(title = "Dashboard"),
+  dashboardHeader(title = "GDP Dashboard"),
   dashboardSidebar(sidebarMenu(
-    menuItem("Intro", tabName = "Intro", icon = icon("th")),
+    menuItem("Intro", tabName = "Intro", icon = icon("gear")),
     menuItem("Correlation By Region", tabName = "widget1", icon = icon("th")),
     menuItem("Correlation By Country", tabName = "widget2", icon = icon("th")),
-    menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard"))
+    menuItem("Time Series Dashboard", tabName = "dashboard", icon = icon("dashboard"))
   )),
   dashboardBody(
     tabItems(
@@ -19,7 +19,13 @@ ui <- dashboardPage(
                      Series analysis of how different countries performed over period of years from 1991 till 2014 comparing across various indicators.", align ="left"),
                   h4("TAB : Correlation by Region" ),
                   h5(" Please select the Region from 'Choose the region' dropdown to choose the region you are interested to find the correlation. This is a multiple select field
-                      which lets you choose multiple Regions you are interested. Please select the icon Type for the Plot from 'Choose Icon type for the Plot' down to choose how you want the correlation plot to display")
+                      which lets you choose multiple Regions you are interested. Please select the icon Type for the Plot from 'Choose Icon type for the Plot' down to choose how you want the correlation plot to display"),
+                  h4("TAB : Correlation by Country" ),
+                  h5(" Please select the Country from 'Choose a Country' dropdown to choose a countryn you are interested to find the correlation. This is a multiple select field
+                     which lets you choose multiple Countries you are interested. Please select the icon Type for the Plot from 'Choose Icon type for the Plot' down to choose how you want the correlation plot to display"),
+                  h4("TAB : Time Series Dasboard "),
+                  h5("Watch the animated motion plot move. Feel free to change the X and Y variables")
+                  
               ))),
       tabItem(tabName = "widget1",
              box(
